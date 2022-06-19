@@ -1,165 +1,124 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* Our rules */
-
 main {
-  border: 2px solid #000000;
   display: grid;
-  background: #de101090;
   grid-template-columns: 64% 36%;
   grid-template-rows: auto auto;
   height: 100%;
   margin: 30px;
-  grid-template-areas: 'photo work' 'about education';
+  gap: 25px;
+
+  grid-template-areas: "photo work" "about education";
 }
 
 .box {
-  border: 2px solid #000000;
-  background: #ffff00;
   text-align: center;
   padding: 100px;
+  border: 2px solid black;
+}
+
+.photo,.about{
+  height:fit-content;
+  background: linear-gradient(90deg, #b7b7b7b9 50%, #ffffff 50%);
 }
 
 .photo {
   grid-area: photo;
+  grid-template-rows: minmax(100px auto);
 }
 
 .work {
   grid-area: work;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about {
   grid-area: about;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: block;
+  text-align: center;
 }
 
 .education {
   grid-area: education;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialmedia {
+  display: flex;
+  text-align: center;
+  margin: 3em;
+  justify-content: space-between;
+  font-stretch: wider;
+  font-size: 2em;
+}
+
+.socialmedia >a:hover {
+  box-shadow: inset 100px 0 0 0 #54b3d6;
+  color: #840a4b;
+}
+
+
+.profile > img {
+  width: 300px;
+  border-radius: 100%;
+  margin: 50px;
+  align-self: bottom;
+}
+
+.name {
+  font-size: 2em;
+  text-justify: distribute;
+}
+
+h1 {
+  text-decoration: solid;
+  font-size: larger;
+  margin: 15px;
+}
+
+h3 {
+  font-style: italic;
+  text-align: center;
+}
+
+.work > div {
+  display: flex;
+  align-items: center;
+  display: block;
+  height: auto;
+  width: 350px;
+}
+
+.work > div > div {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.25em;
+  line-height: 1,75em;
+}
+
+p {
+  text-align: justify;
+  line-height: 1,75em;
+  font-size: 1,75em;
+  padding: 20px;
+}
+
+.skills > ul {
+  padding: 20px;
+  line-height: 2em;
+  text-align: justify;
+  font-size: 1,75em;
+}
+
+.education> div >div {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.25em;
+  line-height: 1,75em;
+}
 }
