@@ -5,14 +5,12 @@ main {
   height: 100%;
   margin: 30px;
   gap: 25px;
-
   grid-template-areas: "photo work" "about education";
 }
 
 .box {
   text-align: center;
   padding: 100px;
-  border: 2px solid black;
 }
 
 .photo,.about{
@@ -22,7 +20,6 @@ main {
 
 .photo {
   grid-area: photo;
-  grid-template-rows: minmax(100px auto);
 }
 
 .work {
@@ -53,7 +50,6 @@ main {
   text-align: center;
   margin: 3em;
   justify-content: space-between;
-  font-stretch: wider;
   font-size: 2em;
 }
 
@@ -121,4 +117,58 @@ p {
   font-size: 1.25em;
   line-height: 1,75em;
 }
+
+b {
+  font-size: 30px;
+  line-height: 1,75 em;
+}
+
+@media only screen and (max-width:600px) {
+  main {
+    grid-template-areas:  "photo photo" "work work" "about about" "education education";
+    grid-template-columns: auto auto;
+    margin: 0;
+    gap: 0;
+  }
+
+  .photo,.about,.work,.education{
+    height:fit-content;
+    background: linear-gradient(90deg, #b7b7b7b9 50%, #ffffff 50%);
+  }
+}
+
+@media (min-width:600px) and (max-width:960px){
+  .box {
+    padding: 40px;
+  }
+
+  .photo,.about{
+    height:80%;
+    background: linear-gradient(90deg, #b7b7b7b9 50%, #ffffff 50%);
+  }
+
+  main {
+    gap: 40px;
+    margin: 20px;
+  }
+
+  .socialmedia {
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
+
+@media only screen and (min-width:960px) {
+  .work {
+    height: 75%;
+  }
+
+  main {
+    gap: 0;
+  }
+
+  .photo,.about{
+    height:100%;
+    background: linear-gradient(90deg, #b7b7b7b9 50%, #ffffff 50%);
+  }
 }
