@@ -1,21 +1,61 @@
+:root {
+  --first-column-width: 64%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
 main {
   display: grid;
-  grid-template-columns: 64% 36%;
+  grid-template-columns: var(--first-column-width) 36%;
   grid-template-rows: auto auto;
-  height: 100%;
+  height: min-content;
   margin: 30px;
   gap: 25px;
   grid-template-areas: "photo work" "about education";
+  /* We might have to tweak this value */
+  max-width: 70%;
+  box-shadow: 0px 2px 22px 0px #0000006e;
+  margin: 20px auto 20px;
+  background: linear-gradient(
+    90deg,
+    #b7b7b7b9 var(--first-column-width),
+    #ffffff 50%
+  );
+}
+
+h1 {
+  text-decoration: solid;
+  font-size: larger;
+  margin: 15px;
+}
+
+h3 {
+  font-style: italic;
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.5em;
+  padding: 20px;
+}
+
+b {
+  font-size: 1.5rem;
+  line-height: 1.5em;
 }
 
 .box {
   text-align: center;
-  padding: 100px;
+  padding: 50px;
 }
 
-.photo,.about{
-  height:fit-content;
-  background: linear-gradient(90deg, #b7b7b7b9 50%, #ffffff 50%);
+.photo,
+.about {
+  height: fit-content;
 }
 
 .photo {
@@ -34,7 +74,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: block;
+  flex-wrap: wrap;
   text-align: center;
 }
 
@@ -53,11 +93,10 @@ main {
   font-size: 2em;
 }
 
-.socialmedia >a:hover {
+.socialmedia > a:hover {
   box-shadow: inset 100px 0 0 0 #54b3d6;
   color: #840a4b;
 }
-
 
 .profile > img {
   width: 300px;
@@ -71,17 +110,6 @@ main {
   text-justify: distribute;
 }
 
-h1 {
-  text-decoration: solid;
-  font-size: larger;
-  margin: 15px;
-}
-
-h3 {
-  font-style: italic;
-  text-align: center;
-}
-
 .work > div {
   display: flex;
   align-items: center;
@@ -90,85 +118,86 @@ h3 {
   width: 350px;
 }
 
-.work > div > div {
+.box > div > div {
   text-align: center;
   padding: 50px;
   font-size: 1.25em;
-  line-height: 1,75em;
-}
-
-p {
-  text-align: justify;
-  line-height: 1,75em;
-  font-size: 1,75em;
-  padding: 20px;
+  line-height: 1, 75em;
 }
 
 .skills > ul {
   padding: 20px;
   line-height: 2em;
   text-align: justify;
-  font-size: 1,75em;
+  font-size: 1, 75em;
 }
 
-.education> div >div {
-  text-align: center;
-  padding: 50px;
-  font-size: 1.25em;
-  line-height: 1,75em;
-}
-
-b {
-  font-size: 30px;
-  line-height: 1,75 em;
-}
-
-@media only screen and (max-width:600px) {
+@media only screen and (min-width: 960px) {
   main {
-    grid-template-areas:  "photo photo" "work work" "about about" "education education";
-    grid-template-columns: auto auto;
-    margin: 0;
     gap: 0;
   }
 
-  .photo,.about,.work,.education{
-    height:fit-content;
-    background: linear-gradient(90deg, #b7b7b7b9 50%, #ffffff 50%);
+  hr {
+    width: 80%;
+  }
+
+  .work {
+    height: 100%;
+  }
+
+  .photo,
+  .about {
+    height: auto;
+    padding: 25px;
+  }
+
+  .photo {
+    display: block;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .socialmedia {
+    justify-content: space-around;
+    gap: 20px;
+  }
+
+  .education {
+    height: auto;
+    padding: 25px;
   }
 }
 
-@media (min-width:600px) and (max-width:960px){
+@media (min-width: 600px) and (max-width: 960px) {
+  body {
+    font-size: 0.65em;
+    line-height: 1.25;
+  }
   .box {
     padding: 40px;
   }
 
-  .photo,.about{
-    height:80%;
-    background: linear-gradient(90deg, #b7b7b7b9 50%, #ffffff 50%);
-  }
-
-  main {
-    gap: 40px;
-    margin: 20px;
+  .photo,
+  .about {
+    height: 80%;
   }
 
   .socialmedia {
     justify-content: space-between;
     gap: 20px;
   }
+
+  .education {
+    height: 50%;
+  }
 }
 
-@media only screen and (min-width:960px) {
-  .work {
-    height: 75%;
-  }
-
+@media only screen and (max-width: 600px) {
   main {
+    max-width: none;
+    grid-template-areas: "photo photo" "work work" "about about" "education education";
+    grid-template-columns: auto auto;
+    margin: 0;
     gap: 0;
-  }
-
-  .photo,.about{
-    height:100%;
-    background: linear-gradient(90deg, #b7b7b7b9 50%, #ffffff 50%);
   }
 }
