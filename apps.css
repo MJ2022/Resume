@@ -143,7 +143,6 @@ ul {
 
 @media only screen and (min-width: 960px) {
   main {
-    border: 2px solid purple;
     gap: 0;
   }
 
@@ -181,7 +180,6 @@ ul {
 
 @media (min-width: 600px) and (max-width: 960px) {
   body {
-    border: 2px solid blue;
     font-size: 0.65em;
     line-height: 1.25;
   }
@@ -206,7 +204,6 @@ ul {
 
 @media only screen and (max-width: 600px) {
   main {
-    border: 5px solid red;
     max-width: none;
     grid-template-areas: "photo photo" "work work" "about about" "education education";
     grid-template-columns: auto auto;
